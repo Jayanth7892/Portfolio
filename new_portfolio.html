@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Jayanth Kumar Naidu</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #ffffff;
+            color: #1f2937;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Subtle Background Accents */
+        .color-blob {
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            filter: blur(80px);
+            z-index: -1;
+            opacity: 0.15;
+        }
+
+        .text-indigo-gradient {
+            background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .pulse {
+            animation: pulse-animation 2s infinite;
+        }
+
+        @keyframes pulse-animation {
+            0% { box-shadow: 0 0 0 0px rgba(34, 197, 94, 0.4); }
+            100% { box-shadow: 0 0 0 10px rgba(34, 197, 94, 0); }
+        }
+
+        .nav-scrolled {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid #f3f4f6;
+        }
+
+        /* Card styles */
+        .project-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .social-pill {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.6rem 1.2rem;
+            border-radius: 9999px;
+            background: #f9fafb;
+            border: 1px solid #e5e7eb;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+        .social-pill:hover {
+            background: #ffffff;
+            border-color: #6366f1;
+            color: #6366f1;
+            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.1);
+        }
+
+        /* Timeline Connector */
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -25px;
+            top: 5px;
+            width: 2px;
+            height: 100%;
+            background: #e5e7eb;
+        }
+        .timeline-item:last-child::before {
+            height: 0;
+        }
+        .timeline-dot {
+            position: absolute;
+            left: -31px;
+            top: 5px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: white;
+            border: 3px solid #6366f1;
+            z-index: 10;
+        }
+
+        /* Enhanced Certification Hover */
+        .cert-item {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid transparent;
+        }
+        .cert-item:hover {
+            background-color: #f5f7ff;
+            padding-left: 1.5rem;
+            border-color: #e0e7ff;
+            box-shadow: 0 10px 25px -5px rgba(99, 102, 241, 0.1), 0 8px 10px -6px rgba(99, 102, 241, 0.1);
+            transform: translateX(8px);
+        }
+    </style>
+</head>
+<body class="selection:bg-indigo-100 relative">
+    <!-- Static Color Blobs -->
+    <div class="color-blob bg-indigo-400 top-0 -left-20"></div>
+    <div class="color-blob bg-purple-400 top-1/4 -right-20"></div>
+    <div class="color-blob bg-blue-400 bottom-0 left-1/3"></div>
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-300">
+        <div class="max-w-4xl mx-auto px-6 py-5 flex justify-between items-center">
+            <h1 class="font-bold text-xl tracking-tighter">Dasamneni Jayanth Kumar Naidu<span class="text-indigo-600">.</span></h1>
+            <div class="flex gap-6 items-center text-sm font-semibold text-gray-500">
+                <a href="#about" class="hover:text-indigo-600 transition">About</a>
+                <a href="#projects" class="hover:text-indigo-600 transition">Projects</a>
+                <a href="#contact" class="px-5 py-2 bg-indigo-600 text-white rounded-full hover:bg-indigo-700 transition shadow-lg shadow-indigo-100">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="max-w-3xl mx-auto px-6 pt-32 pb-24">
+        
+        <!-- Hero Section -->
+        <section class="py-10">
+            <div class="flex items-center gap-3 mb-6">
+                <div class="w-2.5 h-2.5 rounded-full bg-green-500 pulse"></div>
+                <span class="text-xs font-bold uppercase tracking-widest text-indigo-500">Available for Opportunities</span>
+            </div>
+
+            <div class="flex flex-col md:flex-row items-start md:items-center gap-8">
+              <div class="w-24 h-24 md:w-32 md:h-32 shrink-0">
+                    <div class="w-full h-full rounded-3xl bg-indigo-50 p-1 border border-indigo-100 rotate-3 hover:rotate-0 transition-transform duration-300 overflow-hidden shadow-sm">
+                        <div class="w-full h-full rounded-2xl bg-white flex items-center justify-center text-indigo-200 overflow-hidden relative">
+                            <img 
+                                src="jayanth.jpg" 
+                                alt="Jayanth Kumar Naidu" 
+                                class="w-full h-full object-cover"
+                                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                            >
+                            <div class="hidden flex-col items-center justify-center w-full h-full bg-indigo-50/50">
+                                <i class="fas fa-user text-4xl text-indigo-200"></i>
+                                <span class="text-[8px] font-bold text-indigo-300 mt-1 uppercase">Profile</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h2 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-4 text-gray-900 leading-tight">
+                        I'm <span class="text-indigo-gradient">Jayanth Kumar</span>.
+                    </h2>
+                    <p class="text-gray-500 text-lg leading-relaxed max-w-xl">
+                        A B.Tech student specializing in <span class="text-gray-900 font-semibold underline decoration-indigo-300 underline-offset-4">Data Science</span>. I turn complex data into visual stories and intelligent solutions.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Journey Section -->
+        <section id="about" class="mt-24 pt-16 border-t border-gray-100">
+            <div class="mb-12">
+                <h3 class="text-xs uppercase tracking-[0.2em] font-black text-gray-400 mb-2">Background</h3>
+                <h4 class="text-3xl font-bold text-gray-900">Professional Path</h4>
+            </div>
+            
+            <div class="ml-8 space-y-12">
+                <div class="timeline-item relative">
+                    <div class="timeline-dot"></div>
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-12">
+                        <span class="text-sm text-indigo-500 font-bold w-24 shrink-0">2021 — 2025</span>
+                        <div class="md:col-span-3">
+                            <h4 class="font-bold text-gray-900 text-lg">B.Tech in CSE (Data Science)</h4>
+                            <p class="text-sm text-gray-500 mb-3">Rajeev Gandhi Memorial College of Engineering and Technology</p>
+                            <div class="flex items-center gap-2">
+                                <span class="px-3 py-1 bg-green-50 text-green-600 text-[10px] font-black rounded-full border border-green-100">Current CGPA: 9.1</span>
+                                <span class="px-3 py-1 bg-indigo-50 text-indigo-600 text-[10px] font-black rounded-full border border-indigo-100">Full-Time</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item relative">
+                    <div class="timeline-dot" style="border-color: #10b981;"></div>
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-12">
+                        <span class="text-sm text-emerald-500 font-bold w-24 shrink-0">2024 (3 Mos)</span>
+                        <div class="md:col-span-3">
+                            <h4 class="font-bold text-gray-900 text-lg">Data Engineering Intern</h4>
+                            <p class="text-sm text-gray-500 mb-3">AICTE-Eduskills</p>
+                            <p class="text-gray-500 text-sm leading-relaxed mb-4">Focusing on robust ETL pipelines, data cleaning automation, and SQL optimization for large-scale analytical databases.</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="text-[9px] font-bold text-gray-400 uppercase tracking-tighter">Python</span>
+                                <span class="text-[9px] font-bold text-gray-400 uppercase tracking-tighter">SQL</span>
+                                <span class="text-[9px] font-bold text-gray-400 uppercase tracking-tighter">ETL</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Certifications -->
+            <div class="mt-24">
+                <div class="mb-12">
+                    <h3 class="text-xs uppercase tracking-[0.2em] font-black text-gray-400 mb-2">Accomplishments</h3>
+                    <h4 class="text-3xl font-bold text-gray-900 flex items-center gap-3">
+                        Certifications
+                        <span class="w-2 h-2 rounded-full bg-indigo-500"></span>
+                    </h4>
+                </div>
+                
+                <div class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-2 cert-item p-4 rounded-2xl transition-all">
+                        <span class="text-sm text-indigo-500 font-bold">2024</span>
+                        <div class="md:col-span-3">
+                            <h4 class="font-bold text-gray-900 text-lg">Associate Data Analyst</h4>
+                            <p class="text-sm text-gray-500">DataCamp Professional Certification</p>
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-2 cert-item p-4 rounded-2xl transition-all">
+                        <span class="text-sm text-purple-500 font-bold">2023</span>
+                        <div class="md:col-span-3">
+                            <h4 class="font-bold text-gray-900 text-lg">Smart India Internal Hackathon</h4>
+                            <p class="text-sm text-gray-500">RGMCET Certification</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="mt-32 pt-16 border-t border-gray-100">
+            <div class="mb-12">
+                <h3 class="text-xs uppercase tracking-[0.2em] font-black text-gray-400 mb-2">Portfolio</h3>
+                <h4 class="text-3xl font-bold text-gray-900">Featured Work</h4>
+            </div>
+            
+            <div class="space-y-12">
+                <!-- Project 1: LearnPrompt -->
+                <div onclick="openModal(0)" class="group project-card bg-white border border-gray-100 p-6 rounded-[2rem] hover:shadow-2xl hover:shadow-indigo-100 transition-all cursor-pointer">
+                    <div class="aspect-[16/9] bg-gradient-to-br from-indigo-50 to-purple-50 rounded-2xl mb-8 overflow-hidden relative flex items-center justify-center">
+                        <!-- Project Image Only -->
+                        <img 
+                            src="learnprompt.jpg" 
+                            alt="LearnPrompt AI" 
+                            class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                            onerror="this.parentElement.innerHTML='<div class=\'text-indigo-400 text-sm font-bold\'>LearnPrompt Image</div>';"
+                        >
+                    </div>
+                    
+                    <div class="flex flex-col gap-4">
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-[10px] px-3 py-1 bg-blue-100 text-blue-700 rounded-full font-bold uppercase">React</span>
+                            <span class="text-[10px] px-3 py-1 bg-emerald-100 text-emerald-700 rounded-full font-bold uppercase">Flask</span>
+                            <span class="text-[10px] px-3 py-1 bg-amber-100 text-amber-700 rounded-full font-bold uppercase">Machine Learning</span>
+                            <span class="text-[10px] px-3 py-1 bg-amber-100 text-amber-700 rounded-full font-bold uppercase">Node.js</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <h4 class="text-2xl font-bold text-gray-900">LearnPrompt Microlearning</h4>
+                            <i class="fas fa-arrow-right text-indigo-600 group-hover:translate-x-1 transition-transform"></i>
+                        </div>
+                        <p class="text-gray-500 text-sm leading-relaxed">Personalized learning ecosystem featuring automated scheduling and ML-based level adjustment.</p>
+                    </div>
+                </div>
+
+                <!-- Project 2: Netflix Recommendation -->
+                <div onclick="openModal(1)" class="group project-card bg-white border border-gray-100 p-6 rounded-[2rem] hover:shadow-2xl hover:shadow-rose-100 transition-all cursor-pointer">
+                    <div class="aspect-[16/9] bg-gradient-to-br from-rose-50 to-orange-50 rounded-2xl mb-8 overflow-hidden relative flex items-center justify-center">
+                        <!-- Project Image Only -->
+                        <img 
+                            src="netflix-engine.jpg" 
+                            alt="Netflix Engine" 
+                            class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                            onerror="this.parentElement.innerHTML='<div class=\'text-rose-400 text-sm font-bold\'>Netflix Engine Image</div>';"
+                        >
+                    </div>
+                    
+                    <div class="flex flex-col gap-4">
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-[10px] px-3 py-1 bg-rose-100 text-rose-700 rounded-full font-bold uppercase">Python</span>
+                            <span class="text-[10px] px-3 py-1 bg-slate-100 text-slate-700 rounded-full font-bold uppercase">Machine Learning</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <h4 class="text-2xl font-bold text-gray-900">Recommendation System</h4>
+                            <i class="fas fa-arrow-right text-rose-600 group-hover:translate-x-1 transition-transform"></i>
+                        </div>
+                        <p class="text-gray-500 text-sm leading-relaxed">A hybrid system to predict viewer preferences, enhance engagement, and minimize churn using MovieLens datasets.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Toolkit -->
+            <div class="mt-24">
+                <h3 class="text-xs uppercase tracking-[0.2em] font-black text-gray-400 mb-8">Expertise</h3>
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                    <div class="p-4 bg-indigo-50/50 border border-indigo-100 rounded-2xl flex flex-col items-center text-center">
+                        <i class="fab fa-python text-2xl text-indigo-600 mb-2"></i>
+                        <span class="text-sm font-bold text-gray-800">Python</span>
+                    </div>
+                    <div class="p-4 bg-emerald-50/50 border border-emerald-100 rounded-2xl flex flex-col items-center text-center">
+                        <i class="fas fa-database text-2xl text-emerald-600 mb-2"></i>
+                        <span class="text-sm font-bold text-gray-800">SQL/ETL</span>
+                    </div>
+                    <div class="p-4 bg-amber-50/50 border border-amber-100 rounded-2xl flex flex-col items-center text-center">
+                        <i class="fas fa-chart-line text-2xl text-amber-600 mb-2"></i>
+                        <span class="text-sm font-bold text-gray-800">Power BI</span>
+                    </div>
+                    <div class="p-4 bg-purple-50/50 border border-purple-100 rounded-2xl flex flex-col items-center text-center">
+                        <i class="fas fa-brain text-2xl text-purple-600 mb-2"></i>
+                        <span class="text-sm font-bold text-gray-800">ML</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer Contact -->
+        <section id="contact" class="mt-32 p-10 bg-indigo-900 rounded-[2.5rem] text-white overflow-hidden relative">
+            <div class="absolute -bottom-10 -right-10 w-40 h-40 bg-indigo-500 rounded-full blur-3xl opacity-30"></div>
+            <div class="relative z-10 text-center">
+                <h2 class="text-3xl font-bold mb-6">Let's solve problems with data.</h2>
+                <div class="flex flex-col items-center gap-8 mt-10">
+                    <a href="mailto:jayanthkumarnaidu21@gmail.com" class="px-10 py-4 bg-white text-indigo-900 rounded-full font-bold hover:scale-105 transition-transform active:scale-95 shadow-xl">
+                        Start a Conversation
+                    </a>
+                    <div class="flex flex-wrap justify-center gap-4">
+                        <a href="https://github.com/Jayanth7892" target="_blank" class="social-pill text-gray-800">
+                            <i class="fab fa-github"></i> <span>GitHub</span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/dasamneni-jayanth-kumar-naidu-015957326/" target="_blank" class="social-pill text-blue-600">
+                            <i class="fab fa-linkedin-in"></i> <span>LinkedIn</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Project Modal -->
+    <div id="projectModal" class="fixed inset-0 z-[100] invisible opacity-0 flex items-center justify-center p-4 md:p-6 bg-black/60 backdrop-blur-md transition-all duration-300">
+        <div class="modal-content relative bg-white w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-[2.5rem] shadow-2xl scale-95 transition-transform duration-300">
+            <!-- Modal Header -->
+            <div id="modalHeader" class="relative h-48 md:h-64 flex items-center justify-center overflow-hidden">
+                <div class="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white/30 via-transparent to-transparent"></div>
+                <div class="relative flex flex-col items-center text-center px-6">
+                    <h3 id="modalTitle" class="text-white text-2xl font-bold">Project Title</h3>
+                </div>
+                <button onclick="closeModal()" class="absolute top-6 right-6 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <!-- Modal Body -->
+            <div class="p-8 md:p-12">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                    <div class="md:col-span-2 space-y-8">
+                        <div>
+                            <h4 class="text-xs uppercase tracking-widest font-bold text-indigo-600 mb-2">The Abstract</h4>
+                            <p id="modalAbstract" class="text-lg text-gray-600 leading-relaxed">Description goes here.</p>
+                        </div>
+
+                        <div>
+                            <h4 class="text-xs uppercase tracking-widest font-bold text-indigo-600 mb-6">Key Components</h4>
+                            <div id="modalModules" class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                <!-- Dynamic Modules -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="space-y-8">
+                        <div>
+                            <h4 class="text-xs uppercase tracking-widest font-bold text-gray-400 mb-4">Stack</h4>
+                            <div id="modalStack" class="flex flex-wrap gap-2">
+                                <!-- Dynamic Badges -->
+                            </div>
+                        </div>
+
+                        <div>
+                            <h4 class="text-xs uppercase tracking-widest font-bold text-gray-400 mb-4">Resources</h4>
+                            <div class="space-y-3">
+                                <a id="modalLiveLink" href="#" target="_blank" class="flex items-center justify-between p-4 bg-indigo-600 text-white rounded-2xl font-bold hover:bg-indigo-700 transition-colors">
+                                    Live Demo <i class="fas fa-external-link-alt text-xs"></i>
+                                </a>
+                                <a id="modalCodeLink" href="#" target="_blank" class="flex items-center justify-between p-4 bg-gray-100 text-gray-900 rounded-2xl font-bold hover:bg-gray-200 transition-colors">
+                                    Source Code <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="max-w-3xl mx-auto px-6 py-12 flex flex-col md:flex-row justify-between items-center gap-4 border-t border-gray-100">
+        <p class="text-[10px] text-gray-400 font-bold uppercase tracking-widest text-center">&copy; 2025 DASAMNENI JAYANTH KUMAR NAIDU</p>
+        <p class="text-[10px] text-gray-400 font-bold uppercase tracking-widest">Driven by Innovation</p>
+    </footer>
+
+    <script>
+        const projects = [
+            {
+                title: "LearnPrompt Microlearning",
+                abstract: "LearnPrompt is a live, prompt-based microlearning ecosystem designed to deliver personalized flash quizzes. By utilizing Machine Learning, it adjusts content difficulty in real-time to match user mastery.",
+                headerColor: "bg-gray-900",
+                stack: ["REACT", "NODE.JS", "FLASK", "SCIKIT-LEARN", "MONGODB"],
+                modules: [
+                    { name: "Prompt Scheduler", desc: "Automates timed quizzes via cron jobs." },
+                    { name: "Answer Logger", desc: "Captures accuracy and response metrics." },
+                    { name: "Level Adjuster (ML)", desc: "Uses Decision Trees to pivot difficulty." },
+                    { name: "Interactive Analytics", desc: "Visualizes progress through React components." }
+                ],
+                live: "https://learnprompt-web.onrender.com",
+                code: "https://github.com/Jayanth7892"
+            },
+            {
+                title: "Netflix Recommendation System",
+                abstract: "A system designed to enhance user engagement and reduce churn by predicting viewer preferences. The model guide decisions on content creation and acquisition through advanced data analysis.",
+                headerColor: "bg-rose-950",
+                stack: ["PYTHON", "SQL", "ETL", "EMBEDDINGS", "SCIKIT-LEARN"],
+                modules: [
+                    { name: "Hybrid Engine", desc: "Combines collaborative filtering and content-based methods." },
+                    { name: "Neural Filtering", desc: "Utilizes deep learning models and embeddings for precision." },
+                    { name: "Real-time Metrics", desc: "Incorporates clicks, watch time, and skips into feedback loops." },
+                    { name: "Behavioral Analytics", desc: "Identifies churn patterns using Kaggle behavior datasets." }
+                ],
+                live: "https://www.kaggle.com/datasets/sayeeduddin/netflix-2025user-behavior-dataset-210k-records",
+                code: "https://github.com/Jayanth7892"
+            }
+        ];
+
+        const modal = document.getElementById('projectModal');
+        const modalContent = modal.querySelector('.modal-content');
+
+        function openModal(index) {
+            const p = projects[index];
+            
+            // Populate Content
+            document.getElementById('modalTitle').textContent = p.title;
+            document.getElementById('modalAbstract').textContent = p.abstract;
+            document.getElementById('modalHeader').className = `relative h-48 md:h-64 flex items-center justify-center overflow-hidden ${p.headerColor}`;
+            
+            // Stack
+            const stackContainer = document.getElementById('modalStack');
+            stackContainer.innerHTML = p.stack.map(s => `<span class="text-[10px] px-3 py-1 bg-gray-100 rounded-full font-bold">${s}</span>`).join('');
+            
+            // Modules
+            const modulesContainer = document.getElementById('modalModules');
+            modulesContainer.innerHTML = p.modules.map(m => `
+                <div class="p-5 rounded-2xl bg-gray-50 border border-gray-100">
+                    <h5 class="font-bold text-gray-900 mb-2">${m.name}</h5>
+                    <p class="text-sm text-gray-500">${m.desc}</p>
+                </div>
+            `).join('');
+
+            // Links
+            document.getElementById('modalLiveLink').href = p.live;
+            document.getElementById('modalCodeLink').href = p.code;
+
+            // Show Modal
+            modal.classList.remove('invisible', 'opacity-0');
+            modal.classList.add('opacity-100');
+            modalContent.classList.remove('scale-95');
+            modalContent.classList.add('scale-100');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            modal.classList.add('invisible', 'opacity-0');
+            modal.classList.remove('opacity-100');
+            modalContent.classList.add('scale-95');
+            modalContent.classList.remove('scale-100');
+            document.body.style.overflow = 'auto';
+        }
+
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 20) nav.classList.add('nav-scrolled');
+            else nav.classList.remove('nav-scrolled');
+        });
+
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) closeModal();
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeModal();
+        });
+    </script>
+</body>
+</html>
